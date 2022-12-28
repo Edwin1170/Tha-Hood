@@ -1,0 +1,276 @@
+--This Script Can Be Modified
+--Made By: Alexx1Speedx
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Annomaly X Hub --Tha Hood", HidePremium = false, SaveConfig = false, ConfigFolder = "Edwin1170#1938"})
+for i,v in next, game.Players:GetPlayers() do
+if v.Name == "Edwin1170" then
+OrionLib:MakeNotification({
+	Name = "!Owner of script is in game!",
+	Content = "Username: Edwin1170",
+	Image = "rbxassetid://9736547820",
+	Time = 30
+})
+
+else
+--nil
+end
+end
+game.Players.PlayerAdded:Connect(function(plr)
+if plr.UserId == 4112108976 then
+		OrionLib:MakeNotification({
+			Name = "!Owner of script has joined game!",
+			Content = "Username: Edwin1170",
+			Image = "rbxassetid://9736547820",
+			Time = 30
+		})
+end
+end)
+OrionLib:MakeNotification({
+	Name = "Credits:",
+	Content = "Edwin1170",
+	Image = "rbxassetid://0",
+	Time = 10
+})
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddParagraph("Made By:","Edwin1170")
+Tab:AddButton({
+	Name = "Pickup All Cash",
+	Callback = function()
+     for i,v in next, game.Workspace:GetDescendants() do
+if v.Name == "MoneyDrop" or v.Name == "Money" then
+fireclickdetector(v:FindFirstChild("ClickDetector"))
+end
+end
+  	end    
+})
+
+Tab:AddToggle({
+	Name = "Auto-Max Armor : $3200 Per Refill",
+	Default = false,
+	Callback = function(Value)
+		getgenv().autoarmor = Value
+while autoarmor do
+task.wait()
+if game:GetService("Players").LocalPlayer.Armor.Value ~= 100 then
+if #game.Players.LocalPlayer.Backpack:GetChildren() ~= 0 then
+if game:GetService("Workspace").Folder.Armor:FindFirstChild("[Full Armor] - $3200") then
+fireclickdetector(game:GetService("Workspace").Folder.Armor:FindFirstChild("[Full Armor] - $3200").Head.ClickDetector)
+else
+fireclickdetector(game:GetService("Workspace").Folder.Armor:FindFirstChild("***DONT SPAM ARMOR*** - $3200").Head.ClickDetector)
+end
+end
+end
+end
+	end    
+})
+Tab:AddTextbox({
+	Name = "Get Multiple MoneyGun's : $100 Each",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+for count = 1, Value do
+for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+if v.Name == "MoneyGun" then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+task.wait()
+fireclickdetector(game:GetService("Workspace").Folder.Purchase["[MoneyGun] - $100"].ClickDetector)
+task.wait(1.5)
+end
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Spam Cash : Need Multiple MoneyGun's", --Need alot of money
+	Callback = function()
+for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+if v.Name == "MoneyGun" then
+v.Parent = game.Players.LocalPlayer.Character
+v:Activate()
+end
+end
+task.wait()
+for i,v in next, game.Players.LocalPlayer.Character:GetChildren() do
+if v.Name == "MoneyGun" then
+v.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+end
+})
+
+local Tab = Window:MakeTab({
+	Name = "Auto-Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddParagraph("Made By:","Edwin1170")
+
+Tab:AddToggle({
+	Name = "Auto-Farm ATM",
+	Default = false,
+	Callback = function(Value)
+getgenv().autofarm = Value
+if autofarm == true then
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-430, 226, -295)
+task.wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+repeat
+task.wait()
+for i,v in next, game.Workspace:GetDescendants() do
+if v:IsA("ProximityPrompt") then
+fireproximityprompt(v)
+end
+end
+until autofarm == false
+task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+end	
+end    
+})
+local Tab = Window:MakeTab({
+	Name = "Buy Tools",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddParagraph("Made By:","QueVivaElPorno")
+Tab:AddButton({
+	Name = "[Full Armor] - $3200",
+	Callback = function()
+     -- ***DONT SPAM ARMOR*** - $3200
+    if game:GetService("Workspace").Folder.Armor:FindFirstChild("[Full Armor] - $3200") then
+         fireclickdetector(game:GetService("Workspace").Folder.Armor:FindFirstChild("[Full Armor] - $3200").Head.ClickDetector)
+    else
+    fireclickdetector(game:GetService("Workspace").Folder.Armor:FindFirstChild("***DONT SPAM ARMOR*** - $3200").Head.ClickDetector)
+  	end
+  	end    
+})
+for i,v in next, game:GetService("Workspace").Folder.Purchase:GetDescendants() do
+if v:IsA("ClickDetector") then
+if v.Parent.Name ~= "Part" then 
+if v.Parent.Name ~= "Lock" then
+    Tab:AddButton({
+	Name = ""..v.Parent.Name,
+	Callback = function()
+     fireclickdetector(v)
+  	end    
+})
+end
+end
+end
+end
+local Tab = Window:MakeTab({
+	Name = "Fun Tab",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddParagraph("Made By:","Alexx1xSpeedx")
+Tab:AddToggle({
+	Name = "Spam Moneybags : $1200 Per Bag",
+	Default = false,
+	Callback = function(Value)
+getgenv().spambags = Value
+while spambags do
+    task.wait()
+fireclickdetector(game:GetService("Workspace").Folder.Purchase["[MoneyBag] - $1200"].ClickDetector)
+for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+if v.Name == "Moneybag" then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+for i,v in next, game.Players.LocalPlayer.Character:GetChildren() do
+if v.Name == "Moneybag" then
+v.Parent = game.Workspace
+end
+end
+fireclickdetector(game:GetService("Workspace").Folder.Purchase["[MoneyBag] - $1200"].ClickDetector)
+end
+end    
+})
+Tab:AddToggle({
+	Name = "Spam Canberrys : $5 Per Can",
+	Default = false,
+	Callback = function(Value)
+getgenv().spamcans = Value
+while spamcans do
+    task.wait()
+for b,c in next, game:GetService("Workspace").Folder.Purchase:GetDescendants() do
+if c.Name == "[Canberry]  -  $5" then
+fireclickdetector(c.ClickDetector)
+for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+if v.Name == "Canberry" then
+v.Parent = game.Players.LocalPlayer.Character
+break
+end
+end
+for i,v in next, game.Players.LocalPlayer.Character:GetChildren() do
+if v.Name == "Canberry" then
+v.Parent = game.Workspace
+end
+end
+fireclickdetector(c.ClickDetector)
+end
+end
+end
+end    
+})
+Tab:AddToggle({
+	Name = "Spam Burgers : $7 Per Burger",
+	Default = false,
+	Callback = function(Value)
+getgenv().spamburgs = Value
+while spamburgs do
+    task.wait()
+for b,c in next, game:GetService("Workspace").Folder.Purchase:GetDescendants() do
+if c.Name == "[Burger]  -  $7" then
+fireclickdetector(c.ClickDetector)
+for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+if v.Name == "Hamburger" then
+v.Parent = game.Players.LocalPlayer.Character
+end
+end
+for i,v in next, game.Players.LocalPlayer.Character:GetChildren() do
+if v.Name == "Hamburger" then
+v.Parent = game.Workspace
+end
+end
+fireclickdetector(c.ClickDetector)
+end
+end   
+end
+end
+})
+local Tab = Window:MakeTab({
+	Name = "Misc.",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddParagraph("Made By:","Edwin1170")
+Tab:AddButton({
+	Name = "Delete Backpack Tools",
+	Callback = function()
+for i,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+if v:IsA("Tool") then
+v:Remove()
+end
+end
+  	end    
+})
+Tab:AddButton({
+	Name = "Instant Proximty Prompts : Ex. ATMs",
+	Callback = function()
+game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
+  fireproximityprompt(prompt)
+end)
+end    
+})
+Tab:AddButton({
+	Name = "Infinite Yield Admin",
+	Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
